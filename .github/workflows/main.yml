@@ -9,8 +9,12 @@ on:
 
 jobs:
   test:
-    name: sample test sensuikan1973
+    name: Flutter action
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: drawing_app
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
