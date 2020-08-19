@@ -1,4 +1,4 @@
-name: flutter_analyze_and_test
+name: Flutter Action
 
 on:
   pull_request:
@@ -28,7 +28,7 @@ jobs:
   
   ios-build:
     name: iOS Build
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     defaults:
       run:
         shell: bash
@@ -78,8 +78,7 @@ jobs:
         with:
           channel: 'stable'
       - run: flutter pub get
-      - run: flutter test --verbose --coverage --coverage-path=~/coverage/lcov.info
-      - uses: codecov/codecov-action@v1.0.2
+      - run: flutter test --verbose --coverage
+      - uses: codecov/codecov-action@v1
         with:
           token: ${{secrets.CODECOV_TOKEN}}
-          file: ~/coverage/lcov.info
