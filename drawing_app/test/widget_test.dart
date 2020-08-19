@@ -12,7 +12,6 @@ import 'package:drawing_app/main.dart';
 
 void main() {
   testWidgets('初期画面', (WidgetTester tester) async {
-    final helloWorldProvider = Provider<String>((_) => 'Hello World');
     await tester.pumpWidget(
       ProviderScope(
         child: MyApp(),
