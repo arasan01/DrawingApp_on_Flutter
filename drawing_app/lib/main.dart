@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final helloWorldProvider = Provider<String>((_) => "Hello World");
+final helloWorldProvider = Provider<String>((_) => 'Hello World');
 
 void main() {
   runApp(
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Riverpod"),
+          title: const Text('Riverpod'),
         ),
         body: Center(
           child: Consumer((context, watch) {
