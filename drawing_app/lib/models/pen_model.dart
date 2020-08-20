@@ -9,6 +9,14 @@ class Pen {
 
   final Color color;
   final double width;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Pen && color == other.color && width == other.width;
+
+  @override
+  int get hashCode => color.hashCode ^ width.hashCode;
 }
 
 class PenModel extends StateNotifier<Pen> {
