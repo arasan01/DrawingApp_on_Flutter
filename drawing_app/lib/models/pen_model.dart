@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:state_notifier/state_notifier.dart';
 
-class PenModel {
-  PenModel({
+class Pen {
+  Pen({
     this.color = const Color(0xff000000),
     this.width = 3,
   });
@@ -11,4 +11,15 @@ class PenModel {
   final double width;
 }
 
-class PenController extends State
+class PenModel extends StateNotifier<Pen> {
+  PenModel([Pen initialPen]) : super(initialPen ?? Pen());
+
+  Pen get pen => state;
+  set pen(Pen newPen) {
+    state = newPen;
+  }
+
+  void reset() {
+    state = Pen();
+  }
+}
