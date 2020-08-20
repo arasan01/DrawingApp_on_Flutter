@@ -13,7 +13,7 @@ class _$PenTearOff {
   const _$PenTearOff();
 
 // ignore: unused_element
-  _Pen call({Color color = const Color(4278190080), double width = 3}) {
+  _Pen call({Color color = Colors.black, double width = 3}) {
     return _Pen(
       color: color,
       width: width,
@@ -84,11 +84,11 @@ class __$PenCopyWithImpl<$Res> extends _$PenCopyWithImpl<$Res>
 }
 
 class _$_Pen with DiagnosticableTreeMixin implements _Pen {
-  const _$_Pen({this.color = const Color(4278190080), this.width = 3})
+  const _$_Pen({this.color = Colors.black, this.width = 3})
       : assert(color != null),
         assert(width != null);
 
-  @JsonKey(defaultValue: const Color(4278190080))
+  @JsonKey(defaultValue: Colors.black)
   @override
   final Color color;
   @JsonKey(defaultValue: 3)
