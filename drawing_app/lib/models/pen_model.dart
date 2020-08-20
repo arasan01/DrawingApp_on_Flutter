@@ -1,26 +1,19 @@
 import 'package:flutter/widgets.dart';
 import 'package:state_notifier/state_notifier.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-class Pen {
-  Pen({
-    this.color = const Color(0xff000000),
-    this.width = 3,
-  });
+part 'pen_model.freezed.dart';
 
-  final Color color;
-  final double width;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Pen && color == other.color && width == other.width;
-
-  @override
-  int get hashCode => color.hashCode ^ width.hashCode;
+@freezed
+abstract class Pen with _$Pen {
+  const factory Pen(
+      {@Default(Color(0xff000000)) Color color,
+      @Default(3) double width}) = _Pen;
 }
 
 class PenModel extends StateNotifier<Pen> {
-  PenModel([Pen initialPen]) : super(initialPen ?? Pen());
+  PenModel([Pen initialPen]) : super(initialPen ?? const Pen());
 
   Pen get pen => state;
   set pen(Pen newPen) {
@@ -28,6 +21,6 @@ class PenModel extends StateNotifier<Pen> {
   }
 
   void reset() {
-    state = Pen();
+    state = const Pen();
   }
 }
