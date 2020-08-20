@@ -8,6 +8,12 @@
 - [ ] Github ActionでFlutterのテスト的なやつ（Flutter Actionとか
 - [ ] Riverpodを使う
 
+## コマンド
+
+```
+$ flutter pub run build_runner build
+```
+
 ## 完成形
 
 お絵かきアプリがiOS, Androidで動く
