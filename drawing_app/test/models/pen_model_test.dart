@@ -11,14 +11,14 @@ void main() {
   final penModel = container.read(penModelProvider);
   group("Pen: -", () {
     test('Set and Get Pen on riverpod', () {
-      final expected = Pen(color: const Color(0xff00ff00), width: 5);
+      const expected = Pen(color: Color(0xff00ff00), width: 5);
       penModel.pen = expected;
       final actual = penModel.pen;
       expect(expected, actual);
     });
 
     test('Reset Pen on riverpod', () {
-      final expected = Pen();
+      const expected = Pen();
       penModel.reset();
       final actual = penModel.pen;
       expect(expected, actual);
